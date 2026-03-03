@@ -1,0 +1,98 @@
+/* src/components/Skills/Skills.css */
+
+.skills-section {
+  padding: 100px 50px;
+  background-color: #0a0a23; /* Dark professional background */
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #4f46e5; /* Corporate accent color */
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #4f46e5;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Grid for all cards */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: stretch; /* make all cards equal width */
+  align-items: stretch;   /* make all cards equal height */
+}
+
+/* Individual skill card */
+.skill-group {
+  background: linear-gradient(135deg, #111133, #1e1e50);
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.skill-group:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.skill-group h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffffff;
+  border-bottom: 2px solid #4f46e5;
+  padding-bottom: 5px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Individual tag */
+.tag {
+  background-color: #4f46e5;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  transition: background 0.3s, transform 0.3s;
+  cursor: default;
+}
+
+.tag:hover {
+  background-color: #3730a3;
+  transform: scale(1.05);
+}
+
+/* Responsive for mobile */
+@media screen and (max-width: 768px) {
+  .skills-section {
+    padding: 80px 20px;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

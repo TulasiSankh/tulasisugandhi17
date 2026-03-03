@@ -1,0 +1,180 @@
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+    overflow: hidden;
+    
+    /* NEW: Professional Deep Navy & Mesh Glow */
+    background-color: #060a12; /* Darker than black for better depth */
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(26, 188, 156, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 30%, rgba(0, 210, 255, 0.08) 0%, transparent 40%);
+}
+
+/* Structural Grid Overlay - Adds a "Technical" texture */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Subtle 45px grid lines */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 45px 45px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Glassmorphism Flare - Extra layer of polish */
+.hero-section::after {
+    content: "";
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(26, 188, 156, 0.05) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: 1;
+}
+
+/* Ensure content stays above background effects */
+.hero-section > * {
+    position: relative;
+    z-index: 5;
+}
+
+/* Intro / Badge */
+.intro {
+    color: #1abc9c;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Name */
+.name {
+    color: #ffffff; 
+    font-size: clamp(2.5rem, 8vw, 4.5rem); /* Perfectly responsive */
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+/* Subtitle / Tagline */
+.subtitle {
+    color: #94a3b8; /* Soft slate gray */
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+/* Description */
+.description {
+    color: #94a3b8;
+    max-width: 650px;
+    line-height: 1.7;
+    margin: 25px 0;
+    font-size: 1.15rem;
+}
+
+/* Hero Actions Container */
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+}
+/* Base Button - Adjusted for smaller defaults */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* Reduced padding: Top/Bottom 0.6rem, Left/Right 1.5rem */
+    padding: 0.6rem 1.5rem; 
+    font-size: 0.9rem; /* Slightly smaller text */
+    font-weight: 600;
+    border-radius: 6px; 
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+/* Primary Button (View Projects) */
+.btn-filled {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+    color: #060a12;
+    border: none;
+    box-shadow: 0 4px 12px 0 rgba(26, 188, 156, 0.2);
+}
+
+/* Desktop Responsiveness */
+@media (min-width: 768px) {
+    .hero-actions {
+        flex-direction: row;
+    }
+    
+    .btn {
+        /* Reduced from 180px to 140px for a more compact look */
+        min-width: 140px; 
+    }
+}
+/* Secondary Buttons (LinkedIn / Resume) */
+.btn-outline {
+    background-color: transparent;
+    color: #e2e8f0;
+    border: 1px solid #334155; /* Subtle border */
+}
+
+.btn-outline:hover {
+    color: #1abc9c;
+    border-color: #1abc9c;
+    background-color: rgba(26, 188, 156, 0.05);
+    transform: translateY(-3px);
+}
+
+/* Desktop Responsiveness */
+@media (min-width: 768px) {
+    .hero-actions {
+        flex-direction: row;
+    }
+    
+    .btn {
+        min-width: 180px;
+    }
+}
+/* Hero background animation */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #00bcd4 10%, transparent 10%) repeat;
+  animation: move-bg 20s linear infinite;
+  z-index: 0;
+  opacity: 0.2;
+}
+
+@keyframes move-bg {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(50%,50%); }
+  100% { transform: translate(0,0); }
+}
+
+.hero-name, .hero-subtitle, .hero-buttons { position: relative; z-index: 1; }

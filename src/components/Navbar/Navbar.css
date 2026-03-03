@@ -1,0 +1,94 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Using the deep navy from your app.css with transparency */
+  background: rgba(6, 10, 18, 0.8); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1000;
+  padding: 0.75rem 0;
+  transition: all 0.3s ease;
+}
+
+.nav-container {
+  max-width: 1300px; /* Matching your hero padding 10% */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+}
+
+.logo { 
+  font-size: 1.6rem; 
+  font-weight: 800; 
+  color: #fff; 
+  letter-spacing: -0.5px;
+  cursor: pointer;
+}
+
+.logo span { 
+  color: var(--primary-glow); /* Syncing with your App.css variables */
+}
+
+.nav-links { 
+  display: flex; 
+  gap: 2.5rem; 
+  list-style: none; 
+}
+
+.nav-links a { 
+  text-decoration: none; 
+  color: var(--text-muted); 
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: 0.3s; 
+  position: relative;
+}
+
+/* Modern underline hover effect */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--primary-glow);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover { 
+  color: #fff; 
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-btn {
+  border: 1px solid var(--primary-glow);
+  color: var(--primary-glow);
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 210, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Mobile: Ensuring links don't overlap */
+@media (max-width: 768px) {
+  .nav-links { display: none; } /* Consider adding a hamburger menu here later */
+  .nav-container { padding: 0 1.5rem; }
+}
